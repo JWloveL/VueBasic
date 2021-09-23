@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <cpn2></cpn2>
+    <cpn1></cpn1>
+  </div>
+  <script src="../js/vue.js">
+  </script>
+  <script>
+    //全局组件语法糖写法
+    const Cpn1=Vue.extend()
+    Vue.component('cpn1',{
+      template:`
+      <div>
+      <h2>
+       {{message1}}
+</h2>
+</div>
+      `
+    })
+    //局部组件语法糖写法
+    const app=new Vue({
+      el:'#app',
+      data:{
+        message1:'高高在上和散那',
+        message2:'奉主名来的是应当称颂的'
+           },
+      components:{
+        'cpn2':{
+          template:
+            `<div>
+              <h2>
+                 {{message2}}
+              </h2>
+            </div>
+          `
+        }
+      }
+      })
+  </script>
+</body>
+</html>

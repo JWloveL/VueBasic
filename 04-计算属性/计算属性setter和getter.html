@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{fullName}}</h2>
+</div>
+<script src="../js/vue.js">
+</script>
+<script>
+  const obj={
+    name:'Wang Gan',
+    age:'22'
+  }
+  obj.age=18;
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊',
+      firstName:'Kobe',
+      LastName:'Byrant'
+         },
+    //1.计算属性的本质 1.2计算属性和methods对比，计算属性在多次使用时，只会调用一次。它是有缓存的
+    computed:{
+      fullName:{
+        get(){
+          return this.firstName+' '+this.LastName
+        }
+      }
+    }
+    })
+</script>
+</body>
+</html>

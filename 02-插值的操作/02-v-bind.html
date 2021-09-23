@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<<div id="app">
+  <img v-bind:src="imgURL" alt="">
+  <a v-bind:href="aHref">百度一下</a>
+  <!--语法糖写法-->
+  <img :src="imgURL" alt="">
+  <a :href="aHref">百度一下</a>
+</div>
+<script src="../js/vue.js">
+</script>
+<script>
+    const app=new Vue({
+        el:'#app',
+        data:{
+          message:'你好啊',
+          imgURL:'https://img12.360buyimg.com/pop/s1180x940_jfs/t1/176374/26/2467/95533/606d5056Ee3dde2e6/d6c7d0638cc5e2db.jpg.webp',
+          aHref:'http://www.baidu.com'
+        }
+    })
+</script>
+</body>
+</html>

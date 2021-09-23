@@ -1,0 +1,46 @@
+
+<html>
+<head>
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+   <cpn2></cpn2>
+</div>
+<script src="../js/vue.js">
+</script>
+<script>
+  const Cpn1=Vue.extend({
+    template:`
+    <div>
+    <h2>
+    Jesus Christ is son of man
+</h2>
+</div>`
+  })
+  //父组件
+  const Cpn2=Vue.extend({
+    template: `
+      <div>
+      <h2>
+      Jesus Christ is son of God
+</h2>
+<cpn1></cpn1>
+</div>
+    `,
+    components:{
+      cpn1:Cpn1
+    }
+  })
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊'
+         },
+    components:{
+      cpn2:Cpn2
+    }
+    })
+</script>
+</body>
+</html>

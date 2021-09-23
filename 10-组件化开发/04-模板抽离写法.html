@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+  <cpn></cpn>
+</div>
+<!--script标签-->
+<script type="text/x-template" id="cpn">
+  <div>
+    <h2>current number:{{count}}</h2>
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+  </div>
+</script>
+<!--template标签-->
+<!--<template id="cpn">-->
+<!--  <div>-->
+<!--    <h2>Jesus is son of God</h2>-->
+<!--    <p>Jesus is son of man</p>-->
+<!--  </div>-->
+<!--</template>-->
+<script src="../js/vue.js">
+</script>
+<script>
+  Vue.component('cpn',{
+    template:`#cpn`,
+    data(){
+      return{
+        count:0
+      }
+    },
+    methods:{
+      increment(){
+        this.count++
+      },
+      decrement(){
+        this.count--
+      }
+    }
+  })
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊'
+         }
+    })
+</script>
+</body>
+</html>
